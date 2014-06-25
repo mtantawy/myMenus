@@ -1,0 +1,10 @@
+<html ng-app="elmenus">
+<h2>Edit Menu '{{menus.name}}'</h2>
+ 
+<form ng-submit="editMenu()"> 
+<label>Name</label><input type="text" ng-model="menu.name" />
+<button type="submit">Edit Menu</button>
+</form>
+<p>{{EditResult}}</p>
+<a href="/" ng-show="EditResult == 'Success!'">View All Menus</a> 
+</html>
