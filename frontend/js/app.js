@@ -19,6 +19,10 @@ elmenus.config(['$routeProvider',
         templateUrl: 'templates/ListMenus.html',
         controller: 'menusCtrl'
       }).
+      when('/Categories', {
+        templateUrl: 'templates/ListCategories.html',
+        controller: 'categoriesCtrl'
+      }).
       otherwise({
         redirectTo: '/menusCtrl'
       });
