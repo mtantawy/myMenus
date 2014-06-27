@@ -1,0 +1,11 @@
+<html ng-app="elmenus">
+<h2>Delete Menu '{{menus.name}}'</h2>
+
+<div ng-hide="DeleteResult">
+<p>Are you sure you want to delete the menu '{{menus.name}}'?</p>
+<button ng-click="deleteMenu()">Yes</button>
+<a href="/">No</a>
+</div>
+<p>{{DeleteResult}}</p>
+<a href="/" ng-show="DeleteResult == 'Success!'">View All Menus</a> 
+</html>
