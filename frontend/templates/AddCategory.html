@@ -1,10 +1,10 @@
 <html ng-app="elmenus">
-<h2>Add New Menu</h2>
+<h2>Add New Category</h2>
  
-<form ng-submit="addMenu()"> 
-<label>Name</label><input type="text" ng-model="menu.name" />
-<button type="submit">Add Menu</button>
+<form ng-submit="addCategory()"> 
+<label>Name</label><input type="text" ng-model="category.name" />
+<button type="submit">Add Category</button>
 </form>
 <p>{{AddResult}}</p>
-<a href="/" ng-show="AddResult == 'Success!'">View All Menus</a> 
+<a href="/" ng-show="AddResult == 'Success!'">View All Categories</a> 
 </html>
