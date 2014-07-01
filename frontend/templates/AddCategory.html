@@ -3,8 +3,11 @@
  
 <form ng-submit="addCategory()"> 
 <label>Name</label><input type="text" ng-model="category.name" />
+<br/>
+<label>Menu</label><select ng-model="menuSelected" ng-options="menu as menu.name for menu in data.menus"></select>
+<br/>
 <button type="submit">Add Category</button>
 </form>
 <p>{{AddResult}}</p>
-<a href="/" ng-show="AddResult == 'Success!'">View All Categories</a> 
+<a href="/Category" ng-show="AddResult == 'Success!'">View All Categories</a> 
 </html>

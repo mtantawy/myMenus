@@ -3,6 +3,9 @@
  
 <form ng-submit="editCategory()"> 
 <label>Name</label><input type="text" ng-model="category.name" />
+<br/>
+<label>Menu</label><select ng-model="menuSelected" ng-options="menu as menu.name for menu in data.menus"></select>
+<br/>
 <button type="submit">Edit Category</button>
 </form>
 <p>{{EditResult}}</p>

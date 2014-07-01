@@ -18,6 +18,22 @@ elmenus.controller('categoriesCtrl', ['$scope', '$http', function($scope, $http)
 
 
 elmenus.controller('AddCategoryCtrl', ['$scope', '$http', function($scope, $http) {
+    // getting menus for the dropdown list containing menus
+    $scope.data = {};
+    $scope.menuSelected;
+	$http.get('http://localhost:4000/menus').
+	    success(function(data, status, headers, config) {
+	        $scope.data.menus = data;
+	        $scope.status = status;
+	        $scope.headers = headers;
+	        $scope.config = config;
+	    }).error(function (data, status, headers, config) {
+	    	$scope.menus = data;
+	        $scope.status = status;
+	        $scope.headers = headers;
+	        $scope.config = config;
+	    });
+	        
     $scope.addCategory = function() {
         $http.post('http://localhost:4000/categories', [{"id":"", "name":$scope.category.name}]).
         success(function(data, status, headers, config) {
@@ -88,6 +104,21 @@ elmenus.controller('EditCategoryCtrl', ['$scope', '$http', '$routeParams', funct
             $scope.headers = headers;
             $scope.config = config;
             });
+    // getting menus for the dropdown list containing menus
+    $scope.data = {};
+    $scope.menuSelected;
+	$http.get('http://localhost:4000/menus').
+	    success(function(data, status, headers, config) {
+	        $scope.data.menus = data;
+	        $scope.status = status;
+	        $scope.headers = headers;
+	        $scope.config = config;
+	    }).error(function (data, status, headers, config) {
+	    	$scope.menus = data;
+	        $scope.status = status;
+	        $scope.headers = headers;
+	        $scope.config = config;
+	    });
     $scope.editCategory = function() {
         $http.put('http://localhost:4000/categories/'+$scope.category.id, [{"id":"", "name":$scope.category.name}]).
         success(function(data, status, headers, config) {
