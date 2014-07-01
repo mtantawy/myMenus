@@ -134,6 +134,5 @@ elmenus.controller('EditCategoryCtrl', ['$scope', '$http', '$routeParams', funct
             $scope.headers = headers;
             $scope.config = config;
             });
-
     }
 }]);
