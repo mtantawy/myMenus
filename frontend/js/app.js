@@ -19,11 +19,27 @@ elmenus.config(['$routeProvider',
         templateUrl: 'templates/ListMenus.html',
         controller: 'menusCtrl'
       }).
+      when('/Menus', {
+        templateUrl: 'templates/ListMenus.html',
+        controller: 'menusCtrl'
+      }).
       when('/Categories', {
         templateUrl: 'templates/ListCategories.html',
         controller: 'categoriesCtrl'
       }).
+      when('/editCategory/:id', {
+        templateUrl: 'templates/EditCategory.html',
+        controller: 'EditCategoryCtrl'
+      }).
+      when('/addCategory', {
+        templateUrl: 'templates/AddCategory.html',
+        controller: 'AddCategoryCtrl'
+      }).
+      when('/deleteCategory/:id', {
+        templateUrl: 'templates/DeleteCategory.html',
+        controller: 'DeleteCategoryCtrl'
+      }).
       otherwise({
-        redirectTo: '/menusCtrl'
+        redirectTo: '/'
       });
   }]);
