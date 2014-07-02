@@ -35,7 +35,7 @@ elmenus.controller('AddCategoryCtrl', ['$scope', '$http', function($scope, $http
 	    });
 	        
     $scope.addCategory = function() {
-        $http.post('http://localhost:4000/categories', [{"id":"", "name":$scope.category.name}]).
+        $http.post('http://localhost:4000/categories', [{"id":"", "name":$scope.category.name, "menuid":$scope.menuSelected.id}]).
         success(function(data, status, headers, config) {
             $scope.AddResult = 'Success!';
             $scope.data = data;
@@ -120,7 +120,7 @@ elmenus.controller('EditCategoryCtrl', ['$scope', '$http', '$routeParams', funct
 	        $scope.config = config;
 	    });
     $scope.editCategory = function() {
-        $http.put('http://localhost:4000/categories/'+$scope.category.id, [{"id":"", "name":$scope.category.name}]).
+        $http.put('http://localhost:4000/categories/'+$scope.category.id, [{"id":"", "name":$scope.category.name, "menuid":$scope.menuSelected.id}]).
         success(function(data, status, headers, config) {
             $scope.EditResult = 'Success!';
             $scope.data = data;

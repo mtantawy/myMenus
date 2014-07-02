@@ -4,8 +4,8 @@
 <div ng-hide="DeleteResult">
 <p>Are you sure you want to delete the menu '{{categories.name}}'?</p>
 <button ng-click="deleteCategory()">Yes</button>
-<a href="/">No</a>
+<a href="#Categories">No</a>
 </div>
 <p>{{DeleteResult}}</p>
-<a href="/" ng-show="DeleteResult == 'Success!'">View All Categories</a> 
+<a href="#Categories" ng-show="DeleteResult == 'Success!'">View All Categories</a> 
 </html>
