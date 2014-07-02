@@ -1,7 +1,7 @@
 var elmenus = angular.module('elmenus', ['ngRoute']);
   
-elmenus.config(['$routeProvider',
-  function($routeProvider) {
+elmenus.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/editMenu/:id', {
         templateUrl: 'templates/EditMenu.html',
@@ -42,4 +42,6 @@ elmenus.config(['$routeProvider',
       otherwise({
         redirectTo: '/'
       });
+      	// use the HTML5 History API
+		$locationProvider.html5Mode(true);
   }]);

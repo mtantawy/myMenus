@@ -3,37 +3,59 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>myMenus</title>
     	<!-- Bootstrap -->
     	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-		
-		<title>elmenus</title>
+    	<style type="text/css">
+    	ul.nav li.dropdown:hover > ul.dropdown-menu {
+		    display: block;    
+		}
+		</style>
+		<base href="/">
+	</head>
+
+	<body>
+		<div class="container">
+			<h3 class="text-muted">myMenus</h3>
+
+		<div class="nav" role="navigation">
+	        <ul class="nav nav-tabs" role="tablist">
+	        	<li><a href="/">Home</a></li>
+				<li class="dropdown">
+				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menus <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+			      	<li><a href="#Menus">List All</a></li>
+			      	<li><a href="#addMenu">Add</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+			      	<li><a href="#Categories">List All</a></li>
+			      	<li><a href="#addCategory">Add</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Items <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+			      	<li><a href="#Items">List All</a></li>
+			      	<li><a href="#addItem">Add</a></li>
+				  </ul>
+				</li>
+			</ul>
+    	</div>
+
+		<div class="jumbotron" ng-view></div>
+			</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<!-- Latest compiled and minified JavaScript -->
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
        	<script src="https://code.angularjs.org/1.2.18/angular-route.min.js"></script>
        	<script src="js/app.js"></script>
     	<script src="js/menusCtrl.js"></script>
     	<script src="js/categoriesCtrl.js"></script>
-	</head>
-
-	<body>
-	<div class="container">
-		<div class="header">
-			<ul class="nav nav-pills pull-right">
-				<li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
-	            <ul class="dropdown-menu">
-	              <li><a href="profile.php">My Profile</a></li>
-	              <li><a href="#">Change Password</a></li>
-	              <li class="divider"></li>
-	              <li><a href="signout.php">Sign Out</a></li>
-	            </ul>
-	          </li>
-				<li><a href="/">All Menus</a></li>
-				<li><a href="#addMenu"> Add New Menu </a></li>
-			</ul>
-			
-			<h3 class="text-muted">elmenus</h3>
-		
-		<div class="jumbotron" ng-view></div>
-	</div>
 	</body>
 </html>
